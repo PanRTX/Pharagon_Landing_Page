@@ -1,32 +1,22 @@
-const http = require('http')
-const fs = require('fs')
+const {createReadStream} = require('fs')
+const {createServer} = require('http')
 
-const servidor = http.createServer((pedido, respuesta) => {
-  const url = new URL('http://localhost:8888' + pedido.url)
-  let camino = 'static' + url.pathname
-  if (camino == 'static/')
-    camino = 'static/index.html'
-  fs.stat(camino, error => {
-    if (!error) {
-      fs.readFile(camino, (error, contenido) => {
-        if (error) {
-          respuesta.writeHead(500, { 'Content-Type': 'text/plain' })
-          respuesta.write('Error interno')
-          respuesta.end()
-        } else {
-          respuesta.writeHead(200, { 'Content-Type': 'text/html' })
-          respuesta.write(contenido)
-          respuesta.end()
-        }
-      })
-    } else {
-      respuesta.writeHead(404, { 'Content-Type': 'text/html' })
-      respuesta.write('<!doctype html><html><head></head><body>Recurso inexistente</body></html>')
-      respuesta.end()
-    }
-  })
-})
+// configuramos con una variable de entorno el puerto
+const {PORT = 3000} = process.env
 
-servidor.listen(8888)
+// creamos con el content type del archivo que vamos a servir
+const HTML_CONTENT_TYPE = 'text/html'
 
-console.log('Servidor web iniciado')
+// creamos un requestListener para pasarle a nuestro servidor
+const requestListener = (req, res) => {
+  // escribimos en la respuesta el status code de 200 y el content type que necesitamos
+  res.writeHead(200, { 'Content-Type': HTML_CONTENT_TYPE })
+  // leemos el fichero index.html y su contenido lo redirigimos a la respuesta
+  createReadStream('index.html').pipe(res)
+}
+
+// creamos un servidor con el requestListener
+const server = createServer(requestListener)
+
+// hacemos que el servidor escuche el puerto configurado
+server.listen(PORT)
