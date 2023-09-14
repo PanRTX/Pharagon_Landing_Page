@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharagon</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--lOCAL-->
+    <link rel="stylesheet" href="/Sources/CSS/styles.css">
+
+</head>
+<body data-bs-theme="dark">
+
+
+  <div class="container-fluid loader">
+      
+ 
+    <!--loader-->
+     <div class="spinner-wrapper justify-content-center">
+      <div class="spinner-border " role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div> 
+    </div>
+  </div>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg shadow-none fixed-top blur-box ">
+      
+        <div class="container-fluid">
+          <a class="navbar-brand ps-3 " href="#">Pharagon</a>
+          
+          <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center justify-content-end pe-3" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link active" href="#products">Productos</a>
+              <a class="nav-link active" href="#contact-us">Contactanos</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+    <!--Shop list-->
+    <nav class="navbar fixed-bottom">
+      <div class="container-fluid d-flex justify-content-end">
+        <button class="navbar-toggler purple-btn car-ico" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <i class="bi bi-cart-fill"></i>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" >
+              <li class="nav-item">
+                <div class="accordion d-flex justify-content-center" id="accordionExample">
+                  <div id="carrito"></div>
+              </div>
+                <hr>
+                  <p class="text-right">Total: <span id="total"></span>$</p>
+                  <button id="boton-vaciar" class="btn purple-btn">Vaciar</button>
+              </li>
+      
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--hero-->
+    <section class="container-fluid hero text-center ">
+        <div class="hero-bg " data-aos="fade-down">
+          <div>CREA TU SUEÑO</div>
+            <P data-aos="fade-right">CON TU PROPIA GPU</P>
+            <a href="#products"><button class="purple-btn btn buy-button justify-content-center get-started-btn poster">Empezar</button></a>
+        </div>
+    </section>
+    <br>
+    <section class="container bord bg-body-tertiary">
+        <br>
+        <h1 class="text-center" data-aos="fade-down">Quienes somos?</h1>
+        <br>
+        <p class="fs-3 p-5" data-aos="fade-down">¡Bienvenido a Pharagon, tu destino definitivo 
+            para el mundo del hardware y accesorios para 
+            gamers! En Pharagon, entendemos la pasión y 
+            el entusiasmo que rodean a la comunidad gamer. 
+            Por eso, nos hemos dedicado a ofrecer los productos 
+            más avanzados y emocionantes que potenciarán tu 
+            experiencia de juego al máximo.</p>
+            <div class="d-flex justify-content-center">
+            <button type="button" class=" btn btn-primary purple-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Conocer mas
+            </button>
+
+            </div>
+            <br><br><hr><br>
+            <h1 class="text-center" data-aos="fade-down">Destacado</h1>
+        <br>
+        <div class="poster bord">
+          <div id="carouselExample" class="carousel slide " data-bs-ride="carousel" data-aos="fade-down">
+            <div class="carousel-inner bord">
+                <div class="carousel-item active">
+                <img src="https://img.youtube.com/vi/fj245xMr-BM/maxresdefault.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="/Public/Images/intelLap1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="/Public/Images/setup1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/Public/Images/intelArc.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/Public/Images/RX580.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/Public/Images/RX76001.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev"  type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" id="prev-caroucell" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next"  type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" id="next-caroucell" aria-hidden="true"></span>
+                <span class="visually-hidden" >Next</span>
+            </button>
+            </div>
+        </div>
+        <br>
+    </section>
+        <br><a id="products" href="#"></a>
+    <section class="container products overflow-hidden ">
+        <br><hr><br>
+        
+          <h1 class="text-center" data-aos="fade-down">Compra rapida</h1>
+            <p class="fs-3 text-center" data-aos="fade-down">Los productos de compra rapida son los productos destacados de la tienda principal</p>
+        <br>
+        <div id="items" class="row row-cols-1 row-cols-xxl-1 row-cols-xxl-3 g-3 justify-content-center column-gap-3 " ></div>
+        <br><br>
+        <hr id="contact-us">
+
+    </section>
+      <br><br>
+      <div class="container-fluid ">
+        <div class="container bord bg-body-tertiary" >
+          <br>
+        <h1 class="text-center" data-aos="fade-down">Contactanos</h1>
+        <br>
+          <p class="fs-3 text-center" data-aos="fade-down">Puedes contactarnos
+            desde nuestras redes sociales, o ir a la sucursal indicada
+            en el mapa
+          </p>
+        <br>
+        <div id="map"></div> 
+      </div>
+
+      <br><br><br>
+    <section class="container-fluid footer d-flex justify-content-center align-items-center">
+      <div class="row justify-content-center">
+        <a class="col footer-ico" href=""><i class="bi bi-twitch"></i></a>
+        <a class="col footer-ico "><i class="bi bi-instagram"></i></a>
+        <a class="col footer-ico"><i class="bi bi-facebook"></i></a>
+        <a class="col footer-ico"><i class="bi bi-tiktok"></i></a>
+        <a class="col footer-ico"><i class="bi bi-youtube"></i></a>
+      </div>
+    </section>
+    <br><br><br>
+   <!--Modals-->
+    <!-- Abaout us -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Mas de nosotros</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="fs-3" data-aos="fade-down">Nuestra marca nació de la idea de fusionar la tecnología 
+              de vanguardia con la creatividad y el espíritu competitivo 
+              de los gamers. Nos enorgullece ser más que una simple tienda; 
+              somos un compañero en tu viaje hacia la victoria. Nuestro 
+              objetivo principal es proporcionarte productos que no solo 
+              sean de la más alta calidad, sino que también te inspiren a 
+              alcanzar nuevas alturas en tus aventuras virtuales.</p>  
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary purple-btn" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--Toast-->
+  <div class="toast-container position-fixed  p-3 top-0 end-0">
+    <div id="liveToast" class="toast " role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="bi bi-check-circle-fill"></i>
+        <strong class="me-auto">. Gracias</strong>
+        <small>En este momento</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Tu producto se ha agregado al carrito
+      </div>
+    </div>
+  </div>
+
+    <!--Scripts-->
+    <!--shop-->
+    <script src="/Sources/JavaScript/carrBuy.js"></script>
+    <!--AOS Script-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init()</script>
+
+    <!--Boottrap Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="/Sources/JavaScript/toast.js"></script>
+    <!--Local-->
+    
+    <script src="/Sources/JavaScript/3Deffect.js"></script>
+    <script src="/Sources/JavaScript/GoogleMap.js"></script>
+    <script src="/Sources/JavaScript/loader.js"></script>
+    <!--Google maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=startMap"></script>
+</body>
+</html>
